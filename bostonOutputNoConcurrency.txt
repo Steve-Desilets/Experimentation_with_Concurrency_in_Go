@@ -1,0 +1,5 @@
+Summary Statistics For Experimental Trial Runtimes 
+Runtime Sum in Microseconds 
+96610780
+Average Trial Runtime in Microseconds 
+966107.800000
