@@ -17,6 +17,7 @@ For this study, the data scientist leverages a dataset called "boston" that incl
 12. ptratio - Pupil / Teacher Ratio in Public Schools
 13. lstat - Percentage of Population of Lower Socio-economic Status
 
+For this study, the data scientist created the two Golang programs included within this repository - "Boston_Experiment_With_Concurrency.go" and "Boston_Experiment_No_Concurrency.go" - which complete the same task with the difference being that one program leverages goroutines for concurrency and the other does not leverage Golang's concurrency features.  Each program reads and parses the boston.csv file, calculates the regression line to predict median home values with every possible combination of four or more explanatory variables, and prints the results (including the MSE and AIC). Each program completes this exercise 100 times and records the time to calculate all those regression lines for each of the 100 trials. At the end, each program prints the average trial runtime and the sum of all the trial runtimes to an output text file - both of which are included in this Github repository.
 
 
 
@@ -32,8 +33,5 @@ Harrison, David and Daniel L. Rubinfeld. 1978. "Hedonic housing prices and the d
 
 
 
-
-
-Accordingly, the data scientist in this study created the "web_crawling_and_scraping" Go script included within this repository to crawl across the Wikipedia pages for the following topics and scrape information from them: Robotics, Robot Reinforcement Learning, Robot Operating System, Intelligent Agent, Software Agent, Robotic Process Automation, Chatbot, Applications of Artificial Intelligence, and Android (Robot).  For each of these webpages, the data scientist extracted the webpage's title, the webpage's URL, and the text from the body of the webpage.  The Go program then compiled this data into a JSON for each webpage and exported all the scraped data into the "scrapedOutputGo" output julia file. 
 
 If I were the data scientist making a recommendation to the leadership team of this company based on the findings of this study, I likely would recommend that the company begin leveraging Go instead of Python for its data engineering projects.  That's because previous experiments at this company (as described in the Command_Line_Applications and Benchmarking-Project Github repositories) have proven that Go is a much faster language computationally than Python is.  Given that Go can also produce equally excellent outputs when crawling and scraping the internet, Go should be the data engineering language of choice for this company.
