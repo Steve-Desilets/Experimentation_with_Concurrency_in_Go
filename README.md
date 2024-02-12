@@ -19,10 +19,7 @@ For this study, the data scientist leverages a dataset called "boston" that incl
 
 For this study, the data scientist created the two Golang programs included within this repository - "Boston_Experiment_With_Concurrency.go" and "Boston_Experiment_No_Concurrency.go" - which complete the same task with the difference being that one program leverages goroutines for concurrency and the other does not leverage Golang's concurrency features.  Each program reads and parses the boston.csv file, calculates the regression line to predict median home values with every possible combination of four or more explanatory variables, and prints the results (including the MSE and AIC). Each program completes this exercise 100 times and records the time to calculate all those regression lines for each of the 100 trials. At the end, each program prints the average trial runtime and the sum of all the trial runtimes to an output text file - both of which are included in this Github repository.
 
-
-
-
-
+After completing this study, we see that the average trial runtimes when leveraging and not leveraging concurrency were 1,053,241 microseconds and 966,108 microseconds, respectively.  Therefore, in this case, the program actually ran 8% more quickly when not leveraging Golang's concurrency features.  This finding underscores the fact that even though concurrency can often help improve the computational efficiency of programs, sometimes concurrency does not really yield strong computational benefits.  If I were the data scientist making a recommendation to the leadership team of this company based on the findings of this study, I would recommend that the company's data scientists take a targeted approach to identifying situations in which concurrency would likely result in significant computational efficiency benefits because the hardware and algorithm allow for parallel processing.  For example, programs that repeatedly read information from or to a disk / network would be ideal candidates for leveraging concurrency since reading and writing such information is often thousands of times slower than other programming processes.  The rationale for recommending that programmers only pursue concurrency in such specific situations is that leveraging Golang's concurrency features like goroutines and channels usually decreases the readability of one's code - even if it does sometimes result in computational benefits in specific situations. By undertaking such an intentional strategy for identifying opportunities to utilize concurrency, programmers could balance the often dueling desires for computational efficiency and code simplicity.
 
 
 References
@@ -31,7 +28,3 @@ Belsley, David A., Edwin Kuh, and Roy E. Welsch. 1980. Regression Diagnostics: I
 
 Harrison, David and Daniel L. Rubinfeld. 1978. "Hedonic housing prices and the demand for clean air." Journal of Environmental Economics and Management, 5:81–102.
 
-
-
-
-If I were the data scientist making a recommendation to the leadership team of this company based on the findings of this study, I likely would recommend that the company begin leveraging Go instead of Python for its data engineering projects.  That's because previous experiments at this company (as described in the Command_Line_Applications and Benchmarking-Project Github repositories) have proven that Go is a much faster language computationally than Python is.  Given that Go can also produce equally excellent outputs when crawling and scraping the internet, Go should be the data engineering language of choice for this company.
